@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag aarch64-hass-temzit:$(date +%s) --tag aarch64-hass-temzit:latest
+      run: docker build . --file hass-temzit/Dockerfile --tag aarch64-hass-temzit:$(date +%s) --tag aarch64-hass-temzit:latest
