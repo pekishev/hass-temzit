@@ -1,0 +1,14 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: Home Assistant add-on for Temzit Heat Pump
+version: "1.0.0"
+slug: temzit
+description: Addon to receive data from Temzit Heat Pump
+url: "https://github.com/pekishev/hass-temzit/tree/main/hass-temzit"
+arch:
+  - aarch64
+init: false
+options:
+  message: "Hello world..."
+schema:
+  message: "str?"
+image: "ghcr.io/pekishev/{arch}-hass-temzit"
