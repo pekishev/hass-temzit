@@ -32,5 +32,5 @@ jobs:
         build-args: BUILD_FROM=ghcr.io/home-assistant/aarch64-base:latest
         file: hass-temzit/Dockerfile
         push: true
-        tags: aarch64-hass-temzit:latest aarch64-hass-temzit:$(date +%s)
+        tags: aarch64-hass-temzit:latest
             
