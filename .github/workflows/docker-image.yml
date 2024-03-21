@@ -26,5 +26,11 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Build the Docker image
-      run: docker build . --file hass-temzit/Dockerfile --tag aarch64-hass-temzit:$(date +%s) --tag aarch64-hass-temzit:latest
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.3.0
+      with:
+        build-args: BUILD_FROM=ghcr.io/home-assistant/aarch64-base:latest
+        file: hass-temzit/Dockerfile
+        push: true
+        tags: aarch64-hass-temzit:latest aarch64-hass-temzit:$(date +%s)
+            
