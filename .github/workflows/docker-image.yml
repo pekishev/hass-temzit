@@ -25,6 +25,8 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Fix permissions
+      run: chmod a+x -R hass-temzit/rootfs
 
     - name: Build and push Docker images
       uses: docker/build-push-action@v5.3.0
