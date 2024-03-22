@@ -1,7 +1,8 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 FROM ghcr.io/home-assistant/aarch64-base:latest
 
+RUN /bin/chmod -R 0777 hass-temzit/rootfs
+
 # Copy root filesystem
 COPY hass-temzit/rootfs /
 
-#RUN /bin/chmod a+x /usr/bin/Temzit.Console
