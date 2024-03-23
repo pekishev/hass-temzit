@@ -8,7 +8,10 @@ arch:
   - aarch64
 init: false
 options:
-  message: "Hello world..."
+  temzit-ip: "192.168.1.99"
+  mqtt-server: "localhost"
+  mqtt-user: "localhost"
+  mqtt-password: "localhost"
 schema:
   message: "str?"
 image: "ghcr.io/pekishev/{arch}-hass-temzit"
