@@ -10,10 +10,14 @@
 declare message
 
 ## Get the 'message' key from the user config options.
-message=$(bashio::config 'message')
+message=$(bashio::config 'temzit_ip')
 
 ## Print the message the user supplied, defaults to "Hello World..."
 bashio::log.info "${message:="Hello World..."}"
 
+/usr/bin/env
+
 ## Run your program
+
+cd /usr/bin
 exec /usr/bin/Temzit.Console
