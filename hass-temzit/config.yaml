@@ -13,5 +13,8 @@ options:
   mqtt-user: "localhost"
   mqtt-password: "localhost"
 schema:
-  message: "str?"
+  temzit_ip: "str?"
+  mqtt-server: "str?"
+  mqtt-user: "str?"
+  mqtt-password: "str?"
 image: "ghcr.io/pekishev/{arch}-hass-temzit"
