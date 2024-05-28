@@ -8,13 +8,15 @@ arch:
   - aarch64
 init: false
 options:
-  temzit-ip: null
-  mqtt-server: "localhost"
-  mqtt-user: ""
-  mqtt-password: ""
+  temzit_ip: null
+  mqtt_server: "localhost"
+  mqtt_user: ""
+  mqtt_password: ""
 schema:
   temzit_ip: "str"
-  mqtt-server: "str?"
-  mqtt-user: "str?"
-  mqtt-password: "str?"
+  mqtt_server: "str?"
+  mqtt_user: "str?"
+  mqtt_password: "str?"
+services:
+  - mqtt:need
 image: "ghcr.io/pekishev/{arch}-hass-temzit"
