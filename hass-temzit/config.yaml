@@ -8,12 +8,12 @@ arch:
   - aarch64
 init: false
 options:
-  temzit-ip: "192.168.1.99"
+  temzit-ip: null
   mqtt-server: "localhost"
-  mqtt-user: "localhost"
-  mqtt-password: "localhost"
+  mqtt-user: ""
+  mqtt-password: ""
 schema:
-  temzit_ip: "str?"
+  temzit_ip: "str"
   mqtt-server: "str?"
   mqtt-user: "str?"
   mqtt-password: "str?"
