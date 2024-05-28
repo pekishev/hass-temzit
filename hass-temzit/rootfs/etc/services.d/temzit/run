@@ -7,17 +7,36 @@
 # Add your code here
 
 # Declare variables
-declare message
+declare temzit_ip
+declare mqtt-server
+declare mqtt-user
+declare mqtt-password
+
 
 ## Get the 'message' key from the user config options.
-message=$(bashio::config 'temzit_ip')
+temzit_ip=$(bashio::config 'temzit_ip')
+mqtt-server=$(bashio::config 'mqtt-server')
+mqtt-user=$(bashio::config 'mqtt-user')
+mqtt-password=$(bashio::config 'mqtt-password')
 
-## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="Hello World..."}"
+
+MQTT_HOST=$(bashio::services mqtt "host")
+MQTT_USER=$(bashio::services mqtt "username")
+MQTT_PASSWORD=$(bashio::services mqtt "password")
+
+## Print the message the user supplied, defaults to "<empty>"
+bashio::log.info "temzit_ip: ${temzit_ip:="<empty>"}"
+bashio::log.info "mqtt-server: ${mqtt-server}"
+bashio::log.info "mqtt-user: ${mqtt-user}"
+bashio::log.info "mqtt-password: ${mqtt-password}"
+
+bashio::log.info "MQTT_HOST: ${MQTT_HOST}"
+bashio::log.info "MQTT_USER: ${MQTT_USER}"
+bashio::log.info "MQTT_PASSWORD: ${MQTT_PASSWORD}"
 
 /usr/bin/env
+cat /data/options.json
 
 ## Run your program
-
 cd /usr/bin
 exec /usr/bin/Temzit.Console
