@@ -1,0 +1,1 @@
+dotnet publish --configuration Release --runtime linux-musl-arm64 --self-contained true -p:PublishTrimmed=True -p:SelfContained=true -p:PublishSingleFile=true
