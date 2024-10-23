@@ -31,4 +31,4 @@ bashio::log.info "MQTT_PASSWORD: ${MQTT_PASSWORD}"
 
 ## Run your program
 cd /usr/bin
-exec /usr/bin/Temzit.Console --TemzitIp=${temzit_ip} --MqttServer=${MQTT_HOST} --MqttUser=${MQTT_USER} --MqttPass=${MQTT_PASSWORD}"
+exec /usr/bin/Temzit.Console --TemzitIp="${temzit_ip}" --MqttServer="${MQTT_HOST}" --MqttUser="${MQTT_USER}" --MqttPass="${MQTT_PASSWORD}"
