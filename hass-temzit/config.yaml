@@ -9,14 +9,8 @@ arch:
 init: false
 options:
   temzit_ip: null
-  mqtt_server: "localhost"
-  mqtt_user: ""
-  mqtt_password: ""
 schema:
   temzit_ip: "str"
-  mqtt_server: "str?"
-  mqtt_user: "str?"
-  mqtt_password: "str?"
 hassio_api: true
 services: ["mqtt:need"]
 image: "ghcr.io/pekishev/{arch}-hass-temzit"
