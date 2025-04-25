@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Options;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Client.Options;
@@ -13,13 +14,14 @@ namespace Temzit.MQTT
         private readonly IMqttClient _mqttClient;
         private readonly IMqttClientOptions _options;
 
-        public MqttSender()
+        public MqttSender(IOptions<TemzitOptions> temzitOptions)
         {
             var factory = new MqttFactory();
             _mqttClient = factory.CreateMqttClient();
 
             _options = new MqttClientOptionsBuilder()
-                .WithTcpServer("192.168.1.11", 1883)
+                .WithTcpServer(temzitOptions.Value.MqttServer, 1883)
+                .WithCredentials(temzitOptions.Value.MqttUser, temzitOptions.Value.MqttPass)
                 .WithClientId("temzitmqtt")
                 .Build();
         }

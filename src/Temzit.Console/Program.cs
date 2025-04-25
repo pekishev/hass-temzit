@@ -18,7 +18,7 @@ namespace Temzit.Console
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHostedService<Worker>()
-                        .Configure<TemzitOptions>(hostContext.Configuration.GetSection("Temzit"))
+                        .Configure<TemzitOptions>(hostContext.Configuration)
                         .AddTemzit()
                         .AddMqtt();
                 });

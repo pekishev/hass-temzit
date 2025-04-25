@@ -35,7 +35,7 @@ namespace Temzit.Api
             {
                 _logger.LogDebug("Reading state");
                 var port = 333;
-                using var client = new TcpClient(_temzitOptions.Value.Host, port);
+                using var client = new TcpClient(_temzitOptions.Value.TemzitIp, port);
                 byte[] syncRequest = { 0x30, 0x00 };
                 await using var stream = client.GetStream();
                 await stream.WriteAsync(syncRequest, 0, syncRequest.Length);
@@ -50,13 +50,13 @@ namespace Temzit.Api
 
                 }
 
-                _logger.LogError("Invalid answer");
-                //throw new Exception("Wrong answer");
+                _logger.LogDebug("Invalid answer");
+                throw new Exception("Wrong answer");
             }
             catch (Exception e)
             {
-                _logger.LogError(e, "error reading state");
-                //throw;
+                _logger.LogDebug(e, "error reading state");
+                throw;
             }
             return null;
         }

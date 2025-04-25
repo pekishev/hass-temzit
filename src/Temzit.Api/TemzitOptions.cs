@@ -2,6 +2,9 @@
 {
     public class TemzitOptions
     {
-        public string Host { get; set; }
+        public string TemzitIp { get; set; }
+        public string MqttServer { get; set; }
+        public string MqttUser { get; set; }
+        public string MqttPass { get; set; }
     }
 }
